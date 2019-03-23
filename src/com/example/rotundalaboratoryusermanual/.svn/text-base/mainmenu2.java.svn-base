@@ -1,0 +1,157 @@
+package com.example.rotundalaboratoryusermanual;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.BitmapFactory;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.GridView;
+import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
+
+
+
+public class mainmenu2 extends Activity{
+
+	/**
+	 *This is the second menu  that appears when the app opens teh General Info, uses a GridLayout xml
+	 *Its Used to be the Navigator for any section the User wants to open
+	 *
+	 * <!-- layout_appinfo.xml is the layout for every grid column, so set text and imageview sizes there -->
+	 */
+
+		//Gridview to display items, for customization open declaration in XML.
+		private GridView mGridMain;
+		//private Intent navigateIntent;
+		String facebook_link;
+		
+		@Override
+		protected void onCreate(Bundle savedInstanceState) {
+			super.onCreate(savedInstanceState);
+			setContentView(R.layout.main_menu2);
+			facebook_link = getResources().getString(R.string.facebook_link);
+			
+			Button facebook = (Button) findViewById(R.id.btn_facebook);
+			facebook.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View arg0) {
+					// TODO Auto-generated method stub
+					Intent companyFacebook = new Intent();
+					companyFacebook.setAction(Intent.ACTION_VIEW);
+					companyFacebook.addCategory(Intent.CATEGORY_BROWSABLE);
+					companyFacebook.setData(Uri.parse(facebook_link));
+					startActivity(companyFacebook);
+				}
+			});
+			//The following code used to place Icons on the Gridview using helper Adapters.
+	        mGridMain = (GridView)findViewById(R.id.gvMain);
+	        //mGridMain.setColumnWidth(200);
+	        mGridMain.setStretchMode(GridView.NO_STRETCH);
+	        Resources res = getResources();
+	        List<AppInfo> listAppInfo = new ArrayList<AppInfo>();
+	        /*
+	         * You can replace the existed icons with new ones by only replacing R.drawable.(your Icon).
+	         * And you replace the text types under it by changing the last parameter.
+	         * Example changing "News" to "RSS Feed", You can customize text written under
+	         * every icon (Color/size..etc) in Textview: "tvName" found at the end of "AppInfoAdapter" class
+	         */
+	        listAppInfo.add(new AppInfo(BitmapFactory.decodeResource(res, R.drawable.news), "News"));
+	        listAppInfo.add(new AppInfo(BitmapFactory.decodeResource(res, R.drawable.courses), "Courses"));
+	        listAppInfo.add(new AppInfo(BitmapFactory.decodeResource(res, R.drawable.map), "Map"));
+	        listAppInfo.add(new AppInfo(BitmapFactory.decodeResource(res, R.drawable.media), "Gallery"));
+	        listAppInfo.add(new AppInfo(BitmapFactory.decodeResource(res, R.drawable.about), "About"));
+	        listAppInfo.add(new AppInfo(BitmapFactory.decodeResource(res, R.drawable.contact), "Contact"));
+	        mGridMain.setAdapter(new AppInfoAdapter(this, listAppInfo));
+		
+		
+		/**
+		 * This is used to response for User click on the Gridview
+		 */
+	        
+	        
+		 mGridMain.setOnItemClickListener(new OnItemClickListener() {
+
+			 	/*
+			 	 * Note: item position counts from left to right
+			 	 * i.e News have position 0, Courses would be position 1, Map = 2, etc...
+			 	 */
+			 
+			 
+			 
+				@Override
+				public void onItemClick(AdapterView<?> arg0, View arg1, int position,
+						long arg3) {
+					//create Intent to Navigate through the program according on the click position
+					Intent navigateIntent;
+					switch (position) {
+					case 0: //News
+						try{
+						if(isNetworkAvailable()){ //Check connection,if user is online:
+							//Open the News section:
+							//navigateIntent = new Intent(Main.this, News.class);
+							//startActivity(navigateIntent);
+						} else if(!isNetworkAvailable()){ //if user is offline
+							Toast.makeText(getApplicationContext(), "Please check Internet connection", 2200).show();
+							
+							}
+						} catch (Exception e) {
+							//Else if website/rss is down, Toast this message:
+							Toast.makeText(getApplicationContext(), "News unavailble try again later", 2200).show();
+						}
+						break;
+					case 1: //Courses
+						//navigateIntent = new Intent(Main.this, CoursesListView.class);
+						//startActivity(navigateIntent);
+						break;
+						
+					case 2: //Map
+						navigateIntent = new Intent(mainmenu2.this, CompanyMap.class);
+						startActivity(navigateIntent);
+						break;
+					case 3: //Gallery
+						//navigateIntent = new Intent(Main.this, GalleryActivity.class);
+						//startActivity(navigateIntent);
+						break;
+						
+					case 4: //About
+						
+						navigateIntent = new Intent(mainmenu2.this, about.class);
+						startActivity(navigateIntent);
+						break;
+						
+						
+					case 5: //Contact Us
+						//navigateIntent = new Intent(Main.this, Contact_us.class);
+						//startActivity(navigateIntent);
+						break;
+					default:
+						break;
+					}
+				}
+			});
+	 }
+
+	/**
+	 * This method checks wether the User is online or not
+	 * @return true if User is online, return false otherwise.
+	 */
+	private boolean isNetworkAvailable() {
+	    ConnectivityManager connectivityManager 
+	          = (ConnectivityManager) getSystemService(mainmenu2.CONNECTIVITY_SERVICE);
+	    NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+	    return activeNetworkInfo != null;
+	}
+	
+
+}

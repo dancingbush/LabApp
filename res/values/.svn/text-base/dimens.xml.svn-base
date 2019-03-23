@@ -1,0 +1,32 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    <!-- height fro resetting edittext views if large amount of info eneterd firm database -->
+    <dimen name="new_layout_height">150dp</dimen>
+    
+    <!-- fro bar at bootom of testSelected xml -->
+    
+    <dimen name="divider_size">1dp</dimen>
+    <dimen name="width">60dp</dimen>
+     <dimen name="tex_size_xxsmall">8sp</dimen>
+    <dimen name="tex_size_xsmall">10sp</dimen>
+    <dimen name="tex_size_small">12sp</dimen>
+    <dimen name="tex_size_normal">14sp</dimen>
+    <dimen name="tex_size_large">16sp</dimen>
+    <dimen name="tex_size_xlarge">18sp</dimen>
+    <dimen name="tex_size_xxlarge">20sp</dimen>
+    <dimen name="height">40dp</dimen>
+    
+    <!-- dimension for imageView size of adter getView() that ertuns image to st adpter for grid view in main menu2 -->
+    <dimen name="widthImageGridview">100dp</dimen>
+    <dimen name="heihgtImageGridview">100dp</dimen>
+    
+
+
+    
+    
+
+</resources>

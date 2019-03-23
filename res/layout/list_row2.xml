@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_selector"
+    android:paddingLeft="7dp"
+    android:paddingRight="7dp"
+    android:paddingTop="5dp" >
+    
+    <ImageView 
+        android:id="@+id/iv_courseIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/course_lvv"/>
+
+    <TextView
+        android:id="@+id/tv_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Code"
+        android:layout_toRightOf="@id/iv_courseIcon"
+        android:layout_alignTop="@id/iv_courseIcon"
+        android:layout_marginLeft="8dp"
+        android:textSize="18sp"
+        style="@style/textListView"
+         />
+
+    <TextView
+        android:id="@+id/tv_course_name"
+        android:textColor="#EEE685"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_code"
+
+        android:layout_below="@id/tv_code"
+        android:layout_toLeftOf="@+id/tv_course_credit"
+        android:text="course name" />
+    
+    <ImageView 
+        android:id="@+id/iv_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/arrow3"
+        android:padding="5dp"/>
+    
+        <TextView
+        android:id="@+id/tv_course_credit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/iv_courseIcon"
+        android:layout_toLeftOf="@id/iv_arrow"
+        android:textSize="13sp"
+                android:textColor="#EEE685"
+        android:text="0800-1800hrs"
+                style="@style/textListView" />
+        
+                <View
+        android:id="@+id/view1"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/tv_course_name"
+        android:layout_marginTop="3dp"
+        android:background="@android:color/darker_gray" />
+
+                
+	
+</RelativeLayout>

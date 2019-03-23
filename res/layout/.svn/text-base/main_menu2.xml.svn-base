@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Main" >
+
+    <!-- verticalSpacing is the spacing bewteen rows, horzontalSpacing is between columns -->
+    <!-- no matter teh column width the mage seems to stay the same size! -->
+    <!-- layout_appinfo.xml is the layout for every grid column, so set text and imageview sizes there -->
+    <!-- U cannot set the no of rows, they will set automatically depending on the no of columns and items
+    to display (inthis case no of layout_appinfo's in the adpater ) u provide -->
+    
+        <GridView
+        android:id="@+id/gvMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:columnWidth="165dip"
+        android:horizontalSpacing="80dip"
+        android:verticalSpacing="100dip"
+        android:numColumns="2"
+        android:padding="5dip" 
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="50dip"
+        
+        />
+        
+        <!-- fb button set to invisoble until used -->
+    <Button
+        android:id="@+id/btn_facebook"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+android:paddingRight="10dp"
+android:visibility="gone"
+android:paddingBottom="10dp"
+        android:background="@drawable/fb_button" />
+        
+</RelativeLayout>

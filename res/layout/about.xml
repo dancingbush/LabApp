@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ScrollView01" android:layout_width="wrap_content" 
+        android:padding="10dp"
+                android:background="@drawable/background2"
+        android:layout_height="wrap_content">
+
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_aboutTitleOfCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The Open University"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tv_about_CompanySummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#DDDDDD"
+        android:text="Arab Open University is a non-profit private for Arab nationalism. university founded in 2002 in Kuwait, Jordan, and Lebanon. One year later it opened in Bahrain, Saudi Arabia, Egypt and Oman. The AOU is affiliated with the UK Open University (UKOU). Agreements with the UKOU cover three major areas: licensing of materials, consultancies, accreditation, and validation." />
+
+    <TextView
+        android:id="@+id/tv_about_heading2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+        android:text="Vision"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tv_text_about_UnderHeading2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+                android:textColor="#DDDDDD"
+        android:text="Towards an excellent leading Arab Open University for reinforcing a society of learning and knowledge in the Arab Word." />
+
+    <TextView
+        android:id="@+id/tv_about_heading3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mission"
+                        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tv_about_textUnderHaeding3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+                        android:textColor="#DDDDDD"
+        android:text="The AOU is proud to be the umbrella in the Middle East region for all those ambitious individuals who are keen to pursue their studies and fulfill their aspirations." />
+
+    <TextView
+        android:id="@+id/tv_about_headiing4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Achievement"
+                        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tv_about_textunder_heading4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+                        android:textColor="#DDDDDD"
+        android:text="The AOU has more than 30,000 students in seven countries and has celebrated graduation of more than 12,000 students, more than 50% of which are females." />
+
+     
+    <TextView
+        android:id="@+id/tV_about_heading5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="History"
+                        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tV_about_textUnderHeading5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+                        android:textColor="#DDDDDD"
+        android:text="The idea of establishing a non-profit Open University in the Arab world was initiated by HRH Prince Talal Bin Abdulaziz President of the Arab Gulf Development Programe (AGFUND).\nIn 1996 HRH Prince Talal officially announced the concept of establishing the Arab Open University as a non-conventional academic institution.\nThis initiative developed to a full pledged Arab Open University in 2002 in a strategic partnership with the Open University in the United Kingdom." />
+
+    <TextView
+        android:id="@+id/tv_about_textUnderHeading5B"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+                        android:textColor="#DDDDDD"
+        android:text="The AOU headquarter is located in the state of Kuwait."
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</LinearLayout>
+</ScrollView>

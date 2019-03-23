@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_app"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    >
+    
+    <RelativeLayout 
+      android:layout_width="fill_parent"
+      android:layout_height="match_parent"
+      android:layout_margin="8dp"
+      android:id="@+id/image_wrapper"
+      >
+      
+        <!-- First Ad -->
+      
+       
+        
+        <!-- Top Notes -->
+
+	    <TextView
+	        android:id="@+id/tv_testSelected_TopNotes"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        
+	        android:layout_marginTop="20dp"
+	        android:text="TEST NAME"
+	       android:textColor="#FFFFFF"
+	        android:textSize="20sp" />
+	
+	    <!-- white line splittong widgets -->
+	    <ImageView
+	        android:id="@+id/splitter"
+	        android:contentDescription="@string/splitter"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/tv_testSelected_TopNotes"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="20dp"
+	        android:src="@drawable/splitter" />
+	    
+	    <!-- Section 1 Displine and Test Name and default displine specific image -->
+	
+	    <TextView
+	        android:id="@+id/tv_testSelected_Displine"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/tv_testSelected_TopNotes"
+	        android:layout_below="@+id/splitter"
+	        android:layout_marginTop="30dp"
+	         android:layout_marginBottom="20dp"
+	        android:text="Haematology"
+	        android:textColor="#55bbfa"
+	        android:textSize="20sp" />
+	
+	    <!-- test name -->
+	    
+	    <TextView
+	        android:id="@+id/tv_setelectedTest_TestName"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/tv_testSelected_Displine"
+	        android:layout_alignBottom="@+id/tv_testSelected_Displine"
+	        android:layout_marginLeft="15dp"
+	         android:layout_marginBottom="20dp"
+	        android:layout_toRightOf="@+id/tv_testSelected_Displine"
+	        android:text="REFERRED vs IN-HOUSE"
+	        android:textColor="#FFFFFF"
+	        android:textSize="20sp" />
+
+	    <!-- displine specific image1_image, sacletype only nessacry if umage xceeds size of image view
+	    android:src="@drawable/micro_rupture_rbc" -->
+	    
+	    <ImageView
+	        android:id="@+id/iv_selectedTest_TestImage"
+	        android:contentDescription="@string/imagedescription"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:background="#52D017"
+	        android:layout_below="@+id/tv_testSelected_Displine"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="10dp"
+	        android:adjustViewBounds="true"
+	        android:scaleType="fitXY"
+	         />
+	    
+	    <!-- A Phone NUmber and Call was here but deleted -->
+	    
+	    <!-- Speciman requirments -->
+	     <TextView
+	        android:id="@+id/tv_selectedTest_MainText"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/iv_selectedTest_TestImage"
+	        android:layout_marginTop="20dp"
+	        android:layout_marginBottom="20dp"
+	        android:text="SPECIMAN REQUIREMENTS "
+	        android:textColor="#FFFFFF"
+	        android:textSize="16sp" />
+	     
+	     <!-- orginal number text view was here, set visibilty to gone for now until in use-->
+	     <!-- gone means it will not effect soace occupied in layout -->
+	     
+	     
+	     
+	     
+	      <!-- Section 2 contains test tube image and tanle with details
+	      To get image view win linear layout to sit in cenetr we must set its root linear layout to center first-->
+	      
+	      
+	<LinearLayout
+	     android:id="@+id/tv_selectedTest_Section2"
+	     android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:layout_below="@+id/tv_selectedTest_MainText"
+      android:orientation="horizontal">
+      
+	    
+	
+	    
+<!--test tube image, if image on linear layout use android:ayout gravity to center image
+if in relative layout must use android:ayout_cnterinparnet=trueandroid:src="@drawable/edat_large"-->
+
+	    <ImageView
+	        android:id="@+id/image2_selectedTest_Tubes"
+	        android:contentDescription="@string/imagedescription"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="25dp"
+	        android:layout_marginLeft="30dp"
+	        android:layout_marginRight="30dp"
+	        android:layout_gravity="center_horizontal"
+	        android:adjustViewBounds="true"
+	        android:scaleType="fitXY"
+	         />
+	    
+	    
+	     <!-- white line splittong widgets -->
+	    <ImageView
+	        android:id="@+id/splitter2"
+	        android:contentDescription="@string/splitter"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/image2_selectedTest_Tubes"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="20dp"
+	        android:layout_marginBottom="10dp"
+	        android:src="@drawable/separator" />
+	    </LinearLayout>
+<!--end section 2-->	     
+	
+	
+	
+	
+	     <!-- Table with lots of details -->
+	     <!-- All textviews have allow fro Scrollbars with these Attributes plus been set programmtically textView.setMovemEntMethdo()
+	     android:maxLines = "AN_INTEGER" android:scrollbars = "vertical" -->
+	     
+	     <TableLayout 
+	         android:id="@+id/testSelcted_tabl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_selectedTest_Section2"
+        android:layout_marginTop="20dp" 
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="5dp"
+        
+	         >
+	         
+	         <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3" >
+
+            <TextView
+                android:id="@+id/tvTable_TAT"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/cell_shaoe"
+                android:padding="5dp"
+                android:typeface="sans"
+                android:text="TAT (hrs)"
+                 android:textColor="#FFFFFF"
+                android:textAppearance="?android:attr/textAppearanceMedium" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvTable_TATText"
+               android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="2"
+                android:background="@drawable/cell_shaoe"
+                android:maxLines="10"
+				android:scrollbars = "vertical"
+                android:typeface="sans"
+                android:ems="10"
+                android:text="Contact Referral Lab"
+                android:textColor="#c4c4c4"
+                android:padding="5dp"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+	         
+	         
+	         <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3" >
+
+            <TextView
+                android:id="@+id/tvTable_Fixation"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/cell_shaoe"
+                android:padding="5dp"
+                android:typeface="sans"
+                android:text="Fixation"
+                android:textColor="#FFFFFF"
+                android:textAppearance="?android:attr/textAppearanceMedium" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvTFixation_Input"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="2"
+                android:background="@drawable/cell_shaoe"
+                android:typeface="sans"
+                android:ems="10"
+                android:hint="Histology"
+                android:textColor="#c4c4c4"
+                android:padding="5dp"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+	          <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3" >
+
+            <TextView
+                android:id="@+id/tvTable_TATUrgent"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/cell_shaoe"
+                android:padding="5dp"
+                android:typeface="sans"
+                android:text="Urgent"
+                android:textColor="#FFFFFF"
+                android:textAppearance="?android:attr/textAppearanceMedium" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvTable_TATUrgetInput"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="2"
+                android:background="@drawable/cell_shaoe"
+                android:typeface="sans"
+                android:ems="10"
+                android:hint="Hours        "
+                android:padding="5dp"
+                android:textColor="#c4c4c4"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+	         
+	          
+	          <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3" >
+
+            <TextView
+                android:id="@+id/tvTable_TestCode"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/cell_shaoe"
+                android:padding="5dp"
+                android:typeface="sans"
+                android:text="Test Code"
+                android:textColor="#FFFFFF"
+                android:textAppearance="?android:attr/textAppearanceMedium" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvTable_TestCode_Input"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="2"
+                android:background="@drawable/cell_shaoe"
+                android:typeface="sans"
+                android:ems="10"
+                android:hint="Code        "
+                android:textColor="#c4c4c4"
+                android:padding="5dp"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+	           <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3" >
+
+            <TextView
+                android:id="@+id/tvTable_Refeeral_Center"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/cell_shaoe"
+                android:padding="5dp"
+                android:typeface="sans"
+                android:text="Referral Lab"
+                android:textColor="#FFFFFF"
+                android:textAppearance="?android:attr/textAppearanceMedium" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvTable_Referral_Center_Input"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="2"
+                android:background="@drawable/cell_shaoe"
+                android:maxLines="10"
+				android:scrollbars = "vertical"
+                android:typeface="sans"
+                android:ems="10"
+                android:hint="Hours        "
+                android:textColor="#c4c4c4"
+                android:padding="5dp"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+	         
+	           <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3" >
+
+            <TextView
+                android:id="@+id/tvTable_RefRanges"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/cell_shaoe"
+                android:padding="5dp"
+                android:typeface="sans"
+                android:text="Ref Ranges"
+                android:textColor="#FFFFFF"
+                android:textAppearance="?android:attr/textAppearanceMedium" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvrefRanges_Input"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="2"
+                android:background="@drawable/cell_shaoe"
+                android:maxLines="10"
+				android:scrollbars = "vertical"
+                android:typeface="sans"
+                android:ems="10"
+                android:hint="Ref Range"
+                android:textColor="#c4c4c4"
+                android:padding="5dp"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+	     </TableLayout>
+	     
+	     
+	     <!-- Textview with comments information on on, atriubutes set for scrollable and also .setMovemMent(newScollableMove)
+	     called in textView method java -->
+	     
+	     
+	     <TextView
+	        android:id="@+id/tv_selectedTest_Comments"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/testSelcted_tabl"
+	        android:maxLines="10"
+	        android:layout_marginTop="20dp"
+	        android:text="COMMENTS"
+	        android:textColor="#FFFFFF"
+	        android:textSize="16sp" />
+	     
+	     <!-- bottom panel with like button and number to ring and nack button -->
+	     
+	     <RelativeLayout
+    android:layout_width="480dp"
+    android:layout_height="@dimen/height"
+    android:layout_below="@+id/tv_selectedTest_Comments"
+    android:layout_marginTop="30dp"
+    android:layout_centerHorizontal="true"
+     android:background="@color/dark_purple2" >
+
+    <LinearLayout
+        android:id="@+id/line"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/divider_size"
+        android:layout_alignParentBottom="true"
+        android:background="@color/dark_blue" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/line" >
+
+        <ImageButton
+            android:id="@+id/btnImg_Back"
+            android:layout_width="@dimen/width"
+            android:layout_height="fill_parent"
+            android:background="@drawable/ui_button_purple"
+            android:src="@drawable/phone5" />
+
+        <LinearLayout
+            android:layout_width="@dimen/divider_size"
+            android:layout_height="fill_parent"
+            android:background="@color/dark_blue" >
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:tag="bold"
+            android:text="00441132621675"
+            android:textColor="@color/white"
+            android:textSize="@dimen/tex_size_xxlarge" />
+
+        <LinearLayout
+            android:layout_width="@dimen/divider_size"
+            android:layout_height="fill_parent"
+            android:background="@color/dark_purple2" >
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnImg_Like"
+            android:layout_width="@dimen/width"
+            android:layout_height="fill_parent"
+            android:background="@drawable/ui_button_purple"
+            android:src="@drawable/ico_like" />
+    </LinearLayout>
+</RelativeLayout>
+
+	     <!-- End bottom of blue tab layout -->
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	     <!-- End top level relative layout -->
+</RelativeLayout>
+</ScrollView>
+

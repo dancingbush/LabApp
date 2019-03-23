@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >"
+    
+    <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/helptextview1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+             
+             >
+
+        <!-- This is wheer we define how many menu items we want to use
+        .Every <include layout </include> corrsponds to one menu item. For bllod tube guide only using 14,
+        so up as far as holder 14 only required -->
+        
+    <include layout="@layout/holder_layout"
+      android:id="@+id/holder1"
+      
+       
+        />
+    
+   <include layout="@layout/holder_layout"
+      android:id="@+id/holder2"
+     
+        
+        />
+    <include layout="@layout/holder_layout"
+      android:id="@+id/holder3"
+        
+        />
+     <include layout="@layout/holder_layout"
+      android:id="@+id/holder4"
+        
+        />
+      <include layout="@layout/holder_layout"
+      android:id="@+id/holder5"
+        
+        />
+       <include layout="@layout/holder_layout"
+      android:id="@+id/holder6"
+        
+        />
+        <include layout="@layout/holder_layout"
+      android:id="@+id/holder7"
+        
+        />
+         <include layout="@layout/holder_layout"
+      android:id="@+id/holder8"
+        
+        />
+          <include layout="@layout/holder_layout"
+      android:id="@+id/holder9"
+        
+        />
+           <include layout="@layout/holder_layout"
+      android:id="@+id/holder10"
+        
+        />
+            <include layout="@layout/holder_layout"
+      android:id="@+id/holder11"
+        
+        />
+             <include layout="@layout/holder_layout"
+      android:id="@+id/holder12"
+        
+        />
+              <include layout="@layout/holder_layout"
+      android:id="@+id/holder13"
+        
+        />
+               <include layout="@layout/holder_layout"
+      android:id="@+id/holder14"
+        
+        />
+               <!-- add more menu items here, by addibng mire include layout tags
+               Each include tags holds a holder_layout.xml -->
+               
+    
+           </RelativeLayout>
+    
+
+</LinearLayout>
